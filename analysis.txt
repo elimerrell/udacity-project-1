@@ -1,0 +1,36 @@
+*Task 0*
+These tasks are 0(1), or constant time, because we are accessing a call or text from a list that we already
+know the position of (index). Since we already know the location of the first text and last call, we don't 
+need to be concerned about any of the other elements in the calls or texts lists, so we don't need to loop
+through them to find our answer.
+
+*Task 1*
+These tasks are O(n). This task requires iterating through a list of calls and a list of texts once.
+For each element in the lists, we check if the phone number is present in a list of numbers and add it if 
+it's not already there. Iterating through the calls is O(n) and iterating through the texts is O(n).
+O(n) + O(n) = 2O(n). With big O notation, we don't care about constants, so we drop the 2 and are left with O(n).
+
+*Task 2*
+This task is O(n). I am using one for loop to iterate over the items in the calls list. This will be linear, growing
+as the list of inputs (calls) grow.
+
+
+*Task 3*
+Part A:
+This task is O(n log n). This solution uses three for loops, one to find calls from Bangalore, one to find
+unique area codes, and the third to print elements from our sorted list. The print function uses python's sorted()
+function to sort the list of numbers called by phones from Bangalore. This function is O(n log n), which is the worse
+case compared to O(n) + O(n) + O(n) = 3O(n) = O(n).
+
+
+Part B:
+This task is O(n). We use two for loops, the first to iterate over the calls list to see which calls originate from
+Bangalore, and the second to iterate over this list and find which calls from Bangalore were made to Banglore.
+O(n) + O(n) = 2O(n), so our solution is O(n).
+
+*Task 4*
+This task is O(n log n). This task uses three for loops and a sorting method. The first loop iterates over the calls list and groups phone numbers based on
+if they made or received a call. The next loop does the same for text messages. The third loop iterates over all of the
+outgoing calls to see if any of those numbers received calls or sent or received texts. Finally, python's sorting method
+sorted() is used to sort the results. Each of these loops is O(n), and O(n) + O(n) + O(n) = 3O(n). We drop the constant (3) to arrive at O(n). Although the loops
+are O(n), the final sorted list is O(n log n), which is a worse case than O(n), so the solution is O(n log n).
